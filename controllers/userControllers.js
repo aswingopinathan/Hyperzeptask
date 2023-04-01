@@ -17,10 +17,10 @@ module.exports = {
     },
     searchUser:async(req,res)=>{
         console.log("searchUser working");
-        const keyWord = req.query.searchUser?{
+        const keyWord = req.query.search ? {
             $or:[
-                {name:{$regex:req.query.searchUser,$options:"i"}},
-            {email:{$regex:req.query.searchUser,$options:"i"}}
+                {name:{$regex:req.query.search,$options:"i"}},
+            {email:{$regex:req.query.search,$options:"i"}}
             ]
         }:{}
         const users = await User.find(keyWord)
