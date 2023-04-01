@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const dotenv = require('dotenv')
 const connectDB = require('./config/db')
-const upload = require('express-fileupload')
+// const upload = require('../server/controllers/messageController')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
@@ -18,7 +18,7 @@ connectDB();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
-app.use(upload())
+// app.use(upload())
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
